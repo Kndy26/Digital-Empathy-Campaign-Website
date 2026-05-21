@@ -1,6 +1,6 @@
 # Digital Empathy: Literasi Emosi di Dunia Digital
 
-![Live Demo](https://img.shields.io/badge/Live_Demo-digital--empathy--cyber.web.app-blue?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-digital--empathy--cyber.web.app-blue?style=for-the-badge)](https://digital-empathy-cyber.web.app)
 
 Proyek kampanye digital ini merupakan tugas mata kuliah Cyberpsychology oleh Kelompok 3 Universitas Bunda Mulia. Website ini bertujuan untuk meningkatkan kesadaran literasi emosi dalam berinteraksi di dunia digital melalui sebuah simulasi interaktif.
 
@@ -41,8 +41,8 @@ Pastikan komputer Anda sudah terinstal perangkat lunak berikut:
 
 1. **Clone repositori ini**:
    ```bash
-   git clone <URL_REPOSITORY_ANDA>
-   cd website-uas
+   git clone https://github.com/Kndy26/Digital-Empathy-Campaign-Website.git
+   cd Digital-Empathy-Campaign-Website
    ```
 
 2. **Install Dependensi**:
