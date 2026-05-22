@@ -5,6 +5,7 @@
 
 import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { getAnalytics, isSupported } from 'firebase/analytics';
 
 // ─── Firebase config from .env ────────────────────────────────────────────────
 const firebaseConfig = {
@@ -14,11 +15,20 @@ const firebaseConfig = {
   storageBucket:     import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId:             import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId:     import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Prevent duplicate app initialization in HMR / strict mode
 const app = getApps().length > 0 ? getApps()[0] : initializeApp(firebaseConfig);
 const db  = getFirestore(app);
+
+// Initialize Analytics conditionally (it requires browser environment and measurementId)
+let analytics;
+isSupported().then((yes) => {
+  if (yes) {
+    analytics = getAnalytics(app);
+  }
+});
 
 // ─── Submit survey response ───────────────────────────────────────────────────
 
